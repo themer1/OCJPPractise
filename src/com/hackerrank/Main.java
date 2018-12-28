@@ -1,21 +1,62 @@
 package com.hackerrank;
 
 import java.util.Arrays;
+import static java.lang.System.*;
 
 public class Main {
     static int number1 = 0;
+    static Integer I;
+    {System.out.println("Whiz");}
+
+    static {System.out.println("Static");}
+
+    static int x = 10;
     public static void main(String[] args) {
 	// write your code here
-        Zap apple = new Zap();
-        Class toCompare = Zap.class;
-        if (apple.getClass().equals(toCompare)) {
-            System.out.println("matches");
-        }
-        else {
-            System.out.println("bongi");
+        for (int x = 10, y = 20; x -->y;) {
+            System.out.println(x);
+            System.out.println(y);
         }
     }
 
+
+    /*
+     * Brain teaser
+     */
+    public static void brainTeaser() {
+        for (int x = 9; x > 0; x--) {
+            for (int y = 8; x > y; y++) {
+                System.out.print(x+y);
+            }
+        }
+    }
+    /*
+     * Casting
+     */
+    public static void upAndDownCast() {
+        Object obj = new Double(3);
+        Number num = (Number)obj;
+        System.out.println(num);
+    }
+
+    /*
+     * Program flow
+     */
+    public static void programFlow(String[] args) {
+        String s;
+        try {
+            s = I.toString();
+        } finally {
+            try {
+                int i = Integer.parseInt(args[0]);
+            } catch (NumberFormatException nfe) {
+                System.out.print("Number format exception ");
+            } finally {
+                System.out.println("Fin2");
+            }
+            System.out.println("Fin1");
+        }
+    }
     /*
      *
      */
