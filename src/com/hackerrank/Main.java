@@ -5,20 +5,72 @@ import static java.lang.System.*;
 
 public class Main {
     static int number1 = 0;
+    static int x = 013;
     static Integer I;
     {System.out.println("Whiz");}
 
     static {System.out.println("Static");}
 
-    static int x = 10;
     public static void main(String[] args) {
 	// write your code here
+        Main ma = new Main();
+        ma.divisor(22);
+    }
+
+    void divisor(final int i) {
+        System.out.println(i/x);
+    }
+
+    /*
+     * String equals
+     */
+    public static void stringEquals() {
+        String s1 = "Rekha";
+        //String s2 = "Rekha";
+        String s2 = new String("Rekha");
+        System.out.println(s1.equals(s2));
+        System.out.println(s1 == s2);
+    }
+    /*
+     * Binary XOR Operator copies the bit if it is set in one operand but not both.
+     */
+    public static void binaryXor() {
+        System.out.println(true^false);
+        System.out.println(true ^ (true|false));
+    }
+    /*
+     * printing numbers
+     */
+    public static void printingNumbers() {
+        System.out.print(""+1+2);
+        System.out.println(""+(1+2));
+    }
+    /*
+     * if the else
+     */
+    public static void testIfThenElse() {
+        String out = "0";
+        int i = -1, j = -5;
+        if (i < 5)
+            if (j > 0)
+                if (i < j)
+                    out += "1";
+                else out += "2";
+            else out += "3";
+        else out += "4";
+        System.out.println(out);
+    }
+
+    /*
+     * looping
+     */
+
+    public static void loopingQuesiton() {
         for (int x = 10, y = 20; x -->y;) {
             System.out.println(x);
             System.out.println(y);
         }
     }
-
 
     /*
      * Brain teaser

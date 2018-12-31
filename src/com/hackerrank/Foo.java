@@ -2,7 +2,7 @@ package com.hackerrank;
 
 interface Foo {
     int bar = 42;
-    void go();
+    //void go();
     /*
      * Static interface methods
      * Declared by using static keyword
@@ -13,5 +13,8 @@ interface Foo {
      */
     static void helloWorld() {
         System.out.println("hello world");
+    }
+    public default int getSpeed() {
+        return 5;
     }
 }
