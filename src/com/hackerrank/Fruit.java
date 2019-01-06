@@ -6,7 +6,12 @@ public class Fruit {
     }
 
     public Fruit() {
+        super();
         System.out.println("fruit from parent");
+    }
+
+    public Fruit(String fruitName) {
+        System.out.println("fruit name: "+fruitName);
     }
 
     /*

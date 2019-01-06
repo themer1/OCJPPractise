@@ -5,16 +5,93 @@ import static java.lang.System.*;
 
 public class Main {
     static int number1 = 0;
-    static int x = 013;
+    static int x = 10;
     static Integer I;
+    static int _x = 0X33;
+    static int _y = 1_000;
+    static int _z = 012;
+    static int _b = 0XE;
+    static int _c = 0B01;
+    static int _d = 0b010100;
+    final int j = 32;
+
+    //this one is invalid: static int _a = 0B021; it should be binary?
     {System.out.println("Whiz");}
 
     static {System.out.println("Static");}
 
     public static void main(String[] args) {
 	// write your code here
-        Main ma = new Main();
-        ma.divisor(22);
+       stringEquals();
+    }
+
+    /*
+     * indexOb method in string usage
+     */
+    public static void indexOfMethodUsage() {
+        String str = "abcdef";
+        System.out.println(str.indexOf('c'));
+    }
+
+    /*
+     * String build append
+     */
+
+    public static void stringBuilderAppend() {
+        char[] chars = {'1', 'Z', '0', '-', '8', '1'};
+        StringBuilder sb = new StringBuilder();
+        sb.append(chars, 0, chars.length-1);
+        sb.append('0');
+        sb.append('8');
+        System.out.println(sb);
+        sb.setLength(4);
+        System.out.println(sb);
+        sb.insert(5, "C");
+    }
+    /*
+     * String to int manipulation. First four lines are in main method
+     */
+    static void nxt(Object obj) {
+        String[] X = {"A", "B", "C", "D", "E"};
+        nxt(X);
+        for (String s : X)
+            System.out.println(s);
+        String[] y = (String[])obj;
+        for (int i = 5, j = 0; i > 0; --i, j++) {
+            y[j] = Integer.toString(i);
+        }
+    }
+
+    public int calc(int i) throws IndexOutOfBoundsException {
+        return i+32;
+    }
+
+    private int calc(int i, int j) throws Exception {
+        return i+j;
+    }
+    /*
+     * isCharacterOrDigit
+     * Remember: Character ch = new Character("a"); will give compilation error
+     * as it's being initialized as String (not as character)
+     */
+
+    public static void isCharacterOrDigitCheck() {
+        Character ch = new Character('a');
+        System.out.println(Character.isLetterOrDigit(ch));
+    }
+
+    /*
+     * Double NaN
+     * 0/0 is NaN
+     * 1/0 is Infinite
+     */
+
+    public static void isNanOrInfinite() {
+        Double dbl = 1d;
+        Double dbl2 = 0d;
+        Double dbl3 = dbl/dbl2;
+        System.out.println("DBL3 isNan: "+dbl3.isNaN());
+        System.out.println("DBL3 isInfinite: "+dbl3.isInfinite());
     }
 
     void divisor(final int i) {
@@ -26,8 +103,8 @@ public class Main {
      */
     public static void stringEquals() {
         String s1 = "Rekha";
-        //String s2 = "Rekha";
-        String s2 = new String("Rekha");
+        String s2 = "Rekha";
+        //String s2 = new String("Rekha");
         System.out.println(s1.equals(s2));
         System.out.println(s1 == s2);
     }

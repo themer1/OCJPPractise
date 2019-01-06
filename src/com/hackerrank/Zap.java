@@ -1,6 +1,6 @@
 package com.hackerrank;
 
-class Zap implements Run, Foo{
+class Zap extends Fruit implements Run, Foo{
     protected static void someMethod() {
         System.out.println("Some method in child class");
     }
